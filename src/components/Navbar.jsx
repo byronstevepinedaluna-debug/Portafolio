@@ -116,7 +116,7 @@ const Navbar = () => {
             <a href="https://www.linkedin.com/in/byron-steve-pineda-luna-481508358/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="https://gt.computrabajo.com/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent transition-colors" title="CompuTrabajo">
+            <a href="https://candidato.gt.computrabajo.com/candidate/home" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent transition-colors" title="CompuTrabajo">
               <Briefcase size={18} />
             </a>
           </div>

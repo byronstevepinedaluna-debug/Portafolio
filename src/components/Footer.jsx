@@ -25,7 +25,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5" aria-hidden="true" />
             </a>
             <a 
-              href="https://gt.computrabajo.com/" 
+              href="https://candidato.gt.computrabajo.com/candidate/home" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-slate-400 hover:text-primary dark:hover:text-accent transition-colors hover:scale-110 duration-200" 

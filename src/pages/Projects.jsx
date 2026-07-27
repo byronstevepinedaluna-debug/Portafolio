@@ -56,6 +56,7 @@ const Projects = () => {
       learnedSkills: 'Diseño de arquitectura de microservicios, conexión concurrente a bases de datos relacionales y no relacionales, y gestión de estado global en el frontend.',
       images: [gastro1, gastro2, gastro3],
       githubLink: 'https://github.com/csican-2024328/GastroFlow',
+      liveLink: 'https://gastroflow-frontend.onrender.com/',
     },
     {
       title: 'NexusBank',
@@ -73,6 +74,7 @@ const Projects = () => {
       learnedSkills: 'Estructuración de un backend modular, desarrollo de APIs RESTful escalables y modelado de datos para sistemas de registro médico/donaciones.',
       images: [blood1, blood2, blood3, blood4],
       githubLink: 'https://github.com/ByronKinal/BloodLink',
+      liveLink: 'https://bloodlink-web-pgq0.onrender.com/',
     },
     {
       title: 'Proyecto ExpoKinal',
