@@ -101,7 +101,7 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
           </>
         ) : (
           <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-500">
-            <span className="text-sm font-medium">Sin captura</span>
+            <span className="text-sm font-medium text-center px-4">foto no disponible</span>
           </div>
         )}
       </div>

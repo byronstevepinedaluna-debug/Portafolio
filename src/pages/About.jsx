@@ -203,22 +203,14 @@ const About = () => {
             {/* Programming Languages */}
             <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 shadow-xl dark:shadow-slate-950/20">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Lenguajes de Programación</h3>
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {lenguajes.map((skill, index) => (
-                  <div key={index} className="flex flex-col">
-                    <div className="flex justify-between items-center mb-2">
-                      <div className="flex items-center gap-2">
-                        {skill.icon && <skill.icon className={`w-5 h-5 ${skill.iconColor}`} />}
-                        <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm md:text-base">{skill.name}</span>
-                      </div>
-                      <span className="text-xs font-bold px-2 py-0.5 bg-indigo-500/10 text-primary dark:text-accent rounded-full">{skill.percentage}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 dark:bg-portfolio-surface rounded-full h-2 overflow-hidden">
-                      <div 
-                        className={`bg-gradient-to-r ${skill.color} h-full rounded-full transition-all duration-1000 ease-out`} 
-                        style={{ width: `${skill.percentage}%` }}
-                      ></div>
-                    </div>
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-3 p-3.5 bg-slate-50/50 dark:bg-portfolio-surface/30 rounded-xl border border-slate-200/30 dark:border-portfolio-surface/30 hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300"
+                  >
+                    {skill.icon && <skill.icon className={`w-6 h-6 ${skill.iconColor}`} />}
+                    <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm md:text-base">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -235,21 +227,10 @@ const About = () => {
                       {category.items.map((tech, index) => (
                         <div 
                           key={index} 
-                          className="flex flex-col p-2.5 bg-slate-50/50 dark:bg-portfolio-surface/30 rounded-xl border border-slate-200/30 dark:border-portfolio-surface/30 hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300"
+                          className="flex items-center gap-2.5 p-3 bg-slate-50/50 dark:bg-portfolio-surface/30 rounded-xl border border-slate-200/30 dark:border-portfolio-surface/30 hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300"
                         >
-                          <div className="flex justify-between items-center mb-1.5">
-                            <div className="flex items-center gap-2">
-                              {tech.icon && <tech.icon className={`w-4 h-4 ${tech.iconColor}`} />}
-                              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">{tech.name}</span>
-                            </div>
-                            <span className="text-[10px] font-bold text-primary dark:text-accent bg-indigo-500/10 px-1.5 py-0.5 rounded-full">{tech.percentage}%</span>
-                          </div>
-                          <div className="w-full bg-slate-200 dark:bg-portfolio-surface rounded-full h-1 overflow-hidden">
-                            <div 
-                              className="bg-gradient-to-r from-primary to-accent h-full rounded-full" 
-                              style={{ width: `${tech.percentage}%` }}
-                            ></div>
-                          </div>
+                          {tech.icon && <tech.icon className={`w-5 h-5 ${tech.iconColor}`} />}
+                          <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{tech.name}</span>
                         </div>
                       ))}
                     </div>

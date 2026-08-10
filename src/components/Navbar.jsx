@@ -72,7 +72,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#inicio" className="text-xl font-bold text-slate-800 dark:text-white flex items-center hover:scale-105 transition-transform duration-300">
-              Byron<span className="text-primary">Kinal</span>
+              Byron<span className="text-primary">Steve</span>
             </a>
           </div>
           
@@ -110,7 +110,7 @@ const Navbar = () => {
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <div className="w-px h-6 bg-slate-200 dark:bg-portfolio-surface"></div>
-            <a href="https://github.com/ByronKinal" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-850 dark:text-slate-400 dark:hover:text-white transition-colors">
+            <a href="https://github.com/byronstevepinedaluna-debug" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-850 dark:text-slate-400 dark:hover:text-white transition-colors">
               <Github size={18} />
             </a>
             <a href="https://www.linkedin.com/in/byron-steve-pineda-luna-481508358/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent transition-colors">
@@ -165,7 +165,7 @@ const Navbar = () => {
               );
             })}
             <div className="flex justify-center space-x-6 px-3 py-4 border-t border-portfolio-surface dark:border-portfolio-surface mt-3">
-               <a href="https://github.com/ByronKinal" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-850 dark:text-slate-400 dark:hover:text-white">
+               <a href="https://github.com/byronstevepinedaluna-debug" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-850 dark:text-slate-400 dark:hover:text-white">
                 <Github size={22} />
               </a>
                <a href="https://www.linkedin.com/in/byron-steve-pineda-luna-481508358/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent">

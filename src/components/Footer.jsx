@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex justify-center">
           <div className="flex space-x-6">
             <a 
-              href="https://github.com/ByronKinal" 
+              href="https://github.com/byronstevepinedaluna-debug" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hover:scale-110 duration-200"

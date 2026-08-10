@@ -9,8 +9,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #FAFAF9;
+  color: #1C1917;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,8 +24,8 @@ html {
 }
 
 html.dark {
-  background-color: #1a2433;
-  color: #f8fafc;
+  background-color: #1C1917;
+  color: #FAFAF9;
 }
 
 body {
@@ -104,14 +104,14 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 }
 
 @theme {
-  --color-portfolio-bg: #1a2433;
-  --color-portfolio-surface: #243147;
-  --color-portfolio-text: #f8fafc;
-  --color-portfolio-accent: #00e5ff;
-  --color-portfolio-muted: #38bdf8;
+  --color-portfolio-bg: #1C1917;
+  --color-portfolio-surface: #292524;
+  --color-portfolio-text: #FAFAF9;
+  --color-portfolio-accent: #EA580C;
+  --color-portfolio-muted: #65A30D;
 
-  --color-primary: #38bdf8;
-  --color-secondary: #00e5ff;
-  --color-accent: #8b5cf6;
+  --color-primary: #EA580C;
+  --color-secondary: #65A30D;
+  --color-accent: #EA580C;
 }
 
