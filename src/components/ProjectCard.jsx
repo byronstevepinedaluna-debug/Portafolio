@@ -43,9 +43,9 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
   };
 
   return (
-    <div className="bg-white/75 dark:bg-portfolio-surface/70 backdrop-blur-md rounded-2xl border border-[#F0DEE3] dark:border-portfolio-surface/80 shadow-xl overflow-hidden hover:shadow-2xl hover:border-primary/40 dark:hover:border-secondary/40 transition-all duration-500 flex flex-col h-full relative group/card">
-      {/* Decorative top gradient bar */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-primary via-rose-500 to-secondary"></div>
+    <div className="bg-white dark:bg-[#181C24] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden hover:shadow-2xl hover:border-[#991B1B]/40 dark:hover:border-[#991B1B]/40 transition-all duration-300 flex flex-col h-full relative group/card">
+      {/* Decorative top solid bar */}
+      <div className="h-1 w-full bg-[#991B1B]"></div>
 
       {/* Imagen del proyecto (Carrusel integrado) */}
       <div className="h-56 w-full bg-slate-100 dark:bg-portfolio-bg relative overflow-hidden">
@@ -108,19 +108,19 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
 
       <div className="p-6 flex-grow flex flex-col justify-between">
         <div>
-          <h3 className="text-xl font-bold text-[#1A111E] dark:text-white mb-2 group-hover/card:text-primary transition-colors duration-300">{title}</h3>
-          <p className="text-[#6B556E] dark:text-slate-300 mb-5 text-sm leading-relaxed">
+          <h3 className="text-xl font-bold text-[#0F172A] dark:text-white mb-2 group-hover/card:text-[#991B1B] dark:group-hover/card:text-red-400 transition-colors duration-300">{title}</h3>
+          <p className="text-slate-600 dark:text-slate-300 mb-5 text-sm leading-relaxed">
             {description}
           </p>
           
           {/* Habilidades Aprendidas */}
           {learnedSkills && (
-            <div className="mb-5 bg-primary/5 dark:bg-portfolio-bg/30 p-4 rounded-xl border border-primary/15 dark:border-portfolio-surface/50">
-              <div className="flex items-center text-primary dark:text-secondary mb-1.5">
+            <div className="mb-5 bg-[#991B1B]/5 dark:bg-[#0F1117]/60 p-4 rounded-xl border border-[#991B1B]/15 dark:border-slate-800">
+              <div className="flex items-center text-[#991B1B] dark:text-red-400 mb-1.5">
                 <BookOpen className="w-4 h-4 mr-1.5" />
                 <span className="text-xs font-bold uppercase tracking-wider">Habilidades Aprendidas</span>
               </div>
-              <p className="text-xs text-[#6B556E] dark:text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 {learnedSkills}
               </p>
             </div>
@@ -136,7 +136,7 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
               return (
                 <span
                   key={index}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#FAF5F6] text-[#6B556E] dark:bg-portfolio-surface dark:text-slate-300 border border-[#F0DEE3] dark:border-portfolio-surface/40 hover:scale-105 transition-transform duration-200"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-[#11141B] dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-[#991B1B]/40 transition-colors"
                 >
                   {Icon && <Icon className={`w-3.5 h-3.5 ${techInfo.color}`} />}
                   {tech}
@@ -146,13 +146,13 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
           </div>
 
           {/* Links Footer */}
-          <div className="pt-4 border-t border-[#F0DEE3] dark:border-portfolio-surface/80 flex flex-wrap gap-4 items-center">
+          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-4 items-center">
             {githubLink && !Array.isArray(githubLink) && (
               <a
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm font-medium text-[#6B556E] hover:text-primary dark:text-slate-400 dark:hover:text-secondary transition-colors"
+                className="flex items-center text-sm font-medium text-slate-600 hover:text-[#991B1B] dark:text-slate-400 dark:hover:text-red-400 transition-colors"
               >
                 <Github className="w-4.5 h-4.5 mr-1.5" />
                 Repositorio
@@ -164,7 +164,7 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm font-medium text-[#6B556E] hover:text-primary dark:text-slate-400 dark:hover:text-secondary transition-colors"
+                className="flex items-center text-sm font-medium text-slate-600 hover:text-[#991B1B] dark:text-slate-400 dark:hover:text-red-400 transition-colors"
               >
                 <Github className="w-4.5 h-4.5 mr-1.5" />
                 {link.label}
@@ -175,7 +175,7 @@ const ProjectCard = ({ title, description, technologies, githubLink, liveLink, l
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm font-medium text-[#6B556E] hover:text-primary dark:text-slate-400 dark:hover:text-secondary transition-colors"
+                className="flex items-center text-sm font-medium text-slate-600 hover:text-[#991B1B] dark:text-slate-400 dark:hover:text-red-400 transition-colors"
               >
                 <ExternalLink className="w-4.5 h-4.5 mr-1.5" />
                 Ver Proyecto

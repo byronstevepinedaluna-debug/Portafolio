@@ -9,15 +9,15 @@ export default {
     extend: {
       colors: {
         portfolio: {
-          bg: '#0B080E',
-          surface: '#16101D',
-          text: '#FDF8FA',
-          accent: '#F59E0B',
-          muted: '#E11D48',
+          bg: '#0F1117',
+          surface: '#181C24',
+          text: '#F1F5F9',
+          accent: '#991B1B',
+          muted: '#64748B',
         },
-        primary: '#E11D48',
-        secondary: '#F59E0B',
-        accent: '#F43F5E',
+        primary: '#991B1B',
+        secondary: '#475569',
+        accent: '#991B1B',
       }
     },
   },

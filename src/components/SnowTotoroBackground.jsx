@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-// Silueta vectorizada fiel de Totoro (de la imagen del usuario), renderizada con fill="currentColor"
+// Silueta vectorizada fiel de Totoro, renderizada con fill="currentColor" sólido y limpio
 const TotoroParticle = ({ size = 26, color, opacity = 0.45 }) => (
   <svg
     width={size}
@@ -9,7 +9,7 @@ const TotoroParticle = ({ size = 26, color, opacity = 0.45 }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ color, opacity }}
-    className="drop-shadow-sm transition-opacity"
+    className="transition-opacity pointer-events-none"
   >
     {/* Cuerpo y orejas de Totoro */}
     <path
@@ -21,13 +21,13 @@ const TotoroParticle = ({ size = 26, color, opacity = 0.45 }) => (
     {/* Patitas */}
     <ellipse cx="32" cy="108" rx="6" ry="3.5" fill="currentColor" />
     <ellipse cx="68" cy="108" rx="6" ry="3.5" fill="currentColor" />
-    {/* Barriga suave */}
+    {/* Barriga suave en blanco puro */}
     <path
       d="M26,76 C26,62 36,54 50,54 C64,54 74,62 74,76 C74,94 65,102 50,102 C35,102 26,94 26,76 Z"
       fill="white"
-      fillOpacity="0.82"
+      fillOpacity="0.85"
     />
-    {/* Marcas características en forma de flechitas/chevrons en la barriga */}
+    {/* Marcas características en la barriga */}
     <path
       d="M38,68 C38,65 41,63 44,68 M47,68 C47,65 50,63 53,68 M56,68 C56,65 59,63 62,68"
       stroke="currentColor"
@@ -35,13 +35,13 @@ const TotoroParticle = ({ size = 26, color, opacity = 0.45 }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    {/* Ojos saltones y tiernos */}
+    {/* Ojos */}
     <circle cx="36" cy="46" r="6.5" fill="white" />
-    <circle cx="35.5" cy="46" r="2.8" fill="#150E1A" />
+    <circle cx="35.5" cy="46" r="2.8" fill="#0F172A" />
     <circle cx="64" cy="46" r="6.5" fill="white" />
-    <circle cx="64.5" cy="46" r="2.8" fill="#150E1A" />
+    <circle cx="64.5" cy="46" r="2.8" fill="#0F172A" />
     {/* Nariz */}
-    <ellipse cx="50" cy="48" rx="3.5" ry="1.8" fill="#150E1A" />
+    <ellipse cx="50" cy="48" rx="3.5" ry="1.8" fill="#0F172A" />
     {/* Bigotes */}
     <line x1="10" y1="46" x2="22" y2="48" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     <line x1="10" y1="52" x2="22" y2="52" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -52,50 +52,48 @@ const TotoroParticle = ({ size = 26, color, opacity = 0.45 }) => (
   </svg>
 );
 
-// Destello astral de 4 puntas inspirado en la estética de Kurumi
-const AstralSparkle = ({ size = 16, color, opacity = 0.5 }) => (
+// Copo de nieve cristalino sólido
+const SnowflakeParticle = ({ size = 14, color, opacity = 0.5 }) => (
   <svg
     width={size}
     height={size}
     viewBox="0 0 24 24"
     fill="currentColor"
     style={{ color, opacity }}
-    className="drop-shadow-sm"
+    className="pointer-events-none"
   >
-    <path d="M12,0 C12,6.627 6.627,12 0,12 C6.627,12 12,17.373 12,24 C12,17.373 17.373,12 24,12 C17.373,12 12,6.627 12,0 Z" />
+    <path d="M12,0 L12,24 M0,12 L24,12 M3.5,3.5 L20.5,20.5 M3.5,20.5 L20.5,3.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
   </svg>
 );
 
 const SnowTotoroBackground = () => {
-  // Generar un conjunto fijo de copos de nieve flotantes
   const particles = useMemo(() => {
-    // Paleta de colores de Kurumi Tokisaki (rojo rubí, dorado reloj, rosa carmesí y perla)
-    const kurumiColors = [
-      '#E11D48', // Rojo rubí intenso
-      '#F59E0B', // Dorado ámbar (ojo del reloj)
-      '#BE123C', // Carmesí oscuro
-      '#FBBF24', // Dorado brillante
-      '#FB7185', // Rosa rubí suave
-      '#FDA4AF', // Rosa perla
+    // Paleta sólida del Caballero Raging Wolf (acero plateado, blanco lunar, carmesí medieval)
+    const knightColors = [
+      '#CBD5E1', // Acero plateado claro
+      '#94A3B8', // Pizarra acero
+      '#E2E8F0', // Blanco lunar
+      '#991B1B', // Carmesí oscuro de la armadura
+      '#64748B', // Hierro forjado
     ];
 
-    const count = 30;
+    const count = 28;
     const items = [];
 
     for (let i = 0; i < count; i++) {
-      const isSparkle = i % 5 === 0; // Cada 5 partículas un destello astral
-      const left = Math.floor((i / count) * 96 + ((i * 19) % 4)); // Distribución uniforme y determinista
+      const isSnow = i % 4 === 0;
+      const left = Math.floor((i / count) * 96 + ((i * 19) % 4));
       const duration = 12 + ((i * 37) % 14); // 12s a 26s
-      const delay = -((i * 43) % 25); // Inicia en diferentes momentos (ya cayendo)
-      const sway = -35 + ((i * 59) % 70); // Desplazamiento horizontal entre -35px y +35px
-      const rotation = -35 + ((i * 47) % 75); // Rotación
-      const color = kurumiColors[i % kurumiColors.length];
-      const size = isSparkle ? 12 + ((i * 7) % 10) : 20 + ((i * 11) % 18);
-      const opacity = 0.28 + (((i * 13) % 40) / 100); // 0.28 a 0.68
+      const delay = -((i * 43) % 25);
+      const sway = -30 + ((i * 59) % 60);
+      const rotation = -30 + ((i * 47) % 60);
+      const color = knightColors[i % knightColors.length];
+      const size = isSnow ? 14 + ((i * 7) % 8) : 22 + ((i * 11) % 14);
+      const opacity = 0.25 + (((i * 13) % 35) / 100);
 
       items.push({
         id: i,
-        isSparkle,
+        isSnow,
         left,
         duration,
         delay,
@@ -147,8 +145,8 @@ const SnowTotoroBackground = () => {
             '--snow-rot': `${p.rotation}deg`,
           }}
         >
-          {p.isSparkle ? (
-            <AstralSparkle size={p.size} color={p.color} opacity={p.opacity} />
+          {p.isSnow ? (
+            <SnowflakeParticle size={p.size} color={p.color} opacity={p.opacity} />
           ) : (
             <TotoroParticle size={p.size} color={p.color} opacity={p.opacity} />
           )}

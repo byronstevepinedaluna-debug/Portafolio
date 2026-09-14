@@ -167,17 +167,17 @@ const Projects = () => {
   };
 
   return (
-    <section id="proyectos" className="py-20 relative overflow-hidden bg-[#FAF5F6]/40 dark:bg-portfolio-bg/20">
+    <section id="proyectos" className="py-20 relative overflow-hidden bg-[#F4F6F8]/60 dark:bg-portfolio-bg/20">
       {/* Decorative Blur Backgrounds */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-10 right-10 w-96 h-96 bg-slate-400/10 dark:bg-slate-800/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#991B1B]/5 dark:bg-[#991B1B]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#1A111E] dark:text-white">
-            Mis <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-rose-500 to-secondary">Proyectos</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0F172A] dark:text-white">
+            Mis <span className="text-[#991B1B] dark:text-red-400">Proyectos</span>
           </h2>
-          <p className="mt-4 text-lg text-[#6B556E] dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Una selección de mis trabajos más recientes. Explora la "vía de proyectos" y desplázate horizontalmente para verlos uno por uno.
           </p>
         </div>
@@ -221,14 +221,14 @@ const Projects = () => {
           <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none px-4 md:px-12 z-30">
             <button
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-white/80 dark:bg-portfolio-surface/80 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 flex items-center justify-center text-[#1A111E] dark:text-slate-200 shadow-lg hover:bg-white dark:hover:bg-portfolio-surface hover:text-primary dark:hover:text-secondary hover:border-primary/40 hover:scale-110 active:scale-95 transition-all pointer-events-auto cursor-pointer"
+              className="w-12 h-12 rounded-full bg-white dark:bg-[#181C24] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-[#0F172A] dark:text-slate-200 shadow-lg hover:border-[#991B1B] hover:text-[#991B1B] dark:hover:text-red-400 hover:scale-110 active:scale-95 transition-all pointer-events-auto cursor-pointer"
               aria-label="Proyecto anterior"
             >
               <FiChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-white/80 dark:bg-portfolio-surface/80 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 flex items-center justify-center text-[#1A111E] dark:text-slate-200 shadow-lg hover:bg-white dark:hover:bg-portfolio-surface hover:text-primary dark:hover:text-secondary hover:border-primary/40 hover:scale-110 active:scale-95 transition-all pointer-events-auto cursor-pointer"
+              className="w-12 h-12 rounded-full bg-white dark:bg-[#181C24] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-[#0F172A] dark:text-slate-200 shadow-lg hover:border-[#991B1B] hover:text-[#991B1B] dark:hover:text-red-400 hover:scale-110 active:scale-95 transition-all pointer-events-auto cursor-pointer"
               aria-label="Siguiente proyecto"
             >
               <FiChevronRight className="w-6 h-6" />
@@ -244,8 +244,8 @@ const Projects = () => {
               onClick={() => setActiveIndex(index)}
               className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                 index === activeIndex 
-                  ? 'bg-gradient-to-r from-primary to-secondary w-8 shadow-sm shadow-primary/30' 
-                  : 'bg-[#E0CCD2] dark:bg-portfolio-surface w-2.5 hover:bg-primary/40 dark:hover:bg-portfolio-surface/80'
+                  ? 'bg-[#991B1B] w-8 shadow-sm shadow-[#991B1B]/30' 
+                  : 'bg-slate-300 dark:bg-slate-700 w-2.5 hover:bg-slate-400 dark:hover:bg-slate-600'
               }`}
               aria-label={`Ir al proyecto ${index + 1}`}
             />
