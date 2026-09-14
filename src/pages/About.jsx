@@ -1,5 +1,4 @@
 import { 
-  FiCheckCircle as CheckCircle2, 
   FiMail, 
   FiPhone, 
   FiCalendar, 
@@ -91,17 +90,17 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre-mi" className="py-20 relative overflow-hidden bg-slate-50/50 dark:bg-slate-900/10">
+    <section id="sobre-mi" className="py-20 relative overflow-hidden bg-[#FAF5F6]/40 dark:bg-portfolio-bg/20">
       {/* Decorative Orbs */}
-      <div className="absolute top-1/4 left-5 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none animate-blob"></div>
-      <div className="absolute bottom-1/4 right-5 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/4 left-5 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-blob"></div>
+      <div className="absolute bottom-1/4 right-5 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none animate-blob animation-delay-2000"></div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Mí</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#1A111E] dark:text-white">
+            Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-rose-500 to-secondary">Mí</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">
+          <p className="mt-4 text-lg text-[#6B556E] dark:text-slate-300 max-w-2xl mx-auto font-medium">
             Desarrollador apasionado con bases sólidas en desarrollo Frontend, Backend y redes.
           </p>
         </div>
@@ -111,13 +110,13 @@ const About = () => {
           
           {/* Left Column: Biography & Datos Generales */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 md:p-10 shadow-xl dark:shadow-slate-950/20">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+            <div className="bg-white/75 dark:bg-portfolio-surface/65 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 rounded-2xl p-8 md:p-10 shadow-xl shadow-primary/5 dark:shadow-slate-950/20">
+              <h3 className="text-2xl font-bold text-[#1A111E] dark:text-white mb-6 flex items-center gap-2">
                 <FiUser className="text-primary w-6 h-6" /> ¿Quién soy?
               </h3>
-              <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base md:text-lg">
+              <div className="space-y-4 text-[#6B556E] dark:text-slate-300 leading-relaxed text-base md:text-lg">
                 <p>
-                  ¡Hola! Soy <strong className="text-primary dark:text-accent">Byron Pineda</strong>, un apasionado desarrollador Full Stack y estudiante en la fundación <a href="https://www.kinal.org.gt/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-indigo-500 dark:text-accent dark:hover:text-primary transition-colors underline decoration-dotted">Kinal</a>. Mi viaje en el mundo de la programación comenzó con la curiosidad de entender cómo funcionan las cosas en la web, y desde entonces no he parado de aprender y crear.
+                  ¡Hola! Soy <strong className="text-primary dark:text-secondary">Byron Pineda</strong>, un apasionado desarrollador Full Stack y estudiante en la fundación <a href="https://www.kinal.org.gt/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-rose-600 dark:text-secondary dark:hover:text-primary transition-colors underline decoration-dotted">Kinal</a>. Mi viaje en el mundo de la programación comenzó con la curiosidad de entender cómo funcionan las cosas en la web, y desde entonces no he parado de aprender y crear.
                 </p>
                 <p>
                   Me especializo en construir aplicaciones web desde cero, abordando tanto el frontend con tecnologías modernas como React, como el backend desarrollando APIs eficientes. Disfruto enfrentarme a nuevos retos y transformar problemas complejos en soluciones elegantes e intuitivas.
@@ -126,8 +125,8 @@ const About = () => {
             </div>
 
             {/* Datos Generales Card */}
-            <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 shadow-xl dark:shadow-slate-950/20">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Datos Generales</h3>
+            <div className="bg-white/75 dark:bg-portfolio-surface/65 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 rounded-2xl p-8 shadow-xl shadow-primary/5 dark:shadow-slate-950/20">
+              <h3 className="text-2xl font-bold text-[#1A111E] dark:text-white mb-6">Datos Generales</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
                   <div className="p-2 bg-indigo-500/10 rounded-lg text-primary"><FiUser className="w-5 h-5" /></div>
@@ -177,19 +176,19 @@ const About = () => {
             </div>
 
             {/* Habilidades Personales Card */}
-            <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 shadow-xl dark:shadow-slate-950/20">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Habilidades & Cualidades</h3>
+            <div className="bg-white/75 dark:bg-portfolio-surface/65 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 rounded-2xl p-8 shadow-xl shadow-primary/5 dark:shadow-slate-950/20">
+              <h3 className="text-2xl font-bold text-[#1A111E] dark:text-white mb-6">Habilidades & Cualidades</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {softSkills.map((skill, index) => {
                   const Icon = skill.icon;
                   return (
-                    <div key={index} className="flex gap-4 p-4 rounded-xl bg-slate-50/50 dark:bg-portfolio-surface/20 border border-slate-100 dark:border-portfolio-surface/10 hover:border-primary/20 dark:hover:border-accent/20 transition-all duration-300">
+                    <div key={index} className="flex gap-4 p-4 rounded-xl bg-[#FAF5F6]/70 dark:bg-portfolio-surface/25 border border-[#F0DEE3]/70 dark:border-portfolio-surface/30 hover:border-primary/40 dark:hover:border-secondary/40 transition-all duration-300">
                       <div className={`p-3 rounded-lg h-fit ${skill.color}`}>
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1">{skill.name}</h4>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{skill.description}</p>
+                        <h4 className="font-bold text-[#1A111E] dark:text-slate-200 text-sm mb-1">{skill.name}</h4>
+                        <p className="text-xs text-[#6B556E] dark:text-slate-400 leading-relaxed">{skill.description}</p>
                       </div>
                     </div>
                   );
@@ -201,36 +200,36 @@ const About = () => {
           {/* Right Column: Skills */}
           <div className="lg:col-span-5 space-y-8">
             {/* Programming Languages */}
-            <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 shadow-xl dark:shadow-slate-950/20">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Lenguajes de Programación</h3>
+            <div className="bg-white/75 dark:bg-portfolio-surface/65 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 rounded-2xl p-8 shadow-xl shadow-primary/5 dark:shadow-slate-950/20">
+              <h3 className="text-2xl font-bold text-[#1A111E] dark:text-white mb-6">Lenguajes de Programación</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {lenguajes.map((skill, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-3 p-3.5 bg-slate-50/50 dark:bg-portfolio-surface/30 rounded-xl border border-slate-200/30 dark:border-portfolio-surface/30 hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300"
+                    className="flex items-center gap-3 p-3.5 bg-[#FAF5F6]/70 dark:bg-portfolio-surface/35 rounded-xl border border-[#F0DEE3]/70 dark:border-portfolio-surface/50 hover:border-primary/40 dark:hover:border-secondary/40 transition-all duration-300"
                   >
                     {skill.icon && <skill.icon className={`w-6 h-6 ${skill.iconColor}`} />}
-                    <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm md:text-base">{skill.name}</span>
+                    <span className="font-semibold text-[#1A111E] dark:text-slate-200 text-sm md:text-base">{skill.name}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Technologies Grid */}
-            <div className="bg-white/70 dark:bg-portfolio-surface/60 backdrop-blur-md border border-slate-200/50 dark:border-portfolio-surface/50 rounded-2xl p-8 shadow-xl dark:shadow-slate-950/20">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Tecnologías y Herramientas</h3>
+            <div className="bg-white/75 dark:bg-portfolio-surface/65 backdrop-blur-md border border-[#F0DEE3] dark:border-portfolio-surface/80 rounded-2xl p-8 shadow-xl shadow-primary/5 dark:shadow-slate-950/20">
+              <h3 className="text-2xl font-bold text-[#1A111E] dark:text-white mb-6">Tecnologías y Herramientas</h3>
               <div className="space-y-6">
                 {toolCategories.map((category, catIndex) => (
-                  <div key={catIndex} className="border-b border-slate-100 dark:border-portfolio-surface/80 last:border-0 last:pb-0 pb-4">
-                    <h4 className="text-sm font-bold text-primary dark:text-accent mb-3 uppercase tracking-wider">{category.title}</h4>
+                  <div key={catIndex} className="border-b border-[#F0DEE3] dark:border-portfolio-surface/80 last:border-0 last:pb-0 pb-4">
+                    <h4 className="text-sm font-bold text-primary dark:text-secondary mb-3 uppercase tracking-wider">{category.title}</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {category.items.map((tech, index) => (
                         <div 
                           key={index} 
-                          className="flex items-center gap-2.5 p-3 bg-slate-50/50 dark:bg-portfolio-surface/30 rounded-xl border border-slate-200/30 dark:border-portfolio-surface/30 hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300"
+                          className="flex items-center gap-2.5 p-3 bg-[#FAF5F6]/70 dark:bg-portfolio-surface/35 rounded-xl border border-[#F0DEE3]/70 dark:border-portfolio-surface/50 hover:border-primary/40 dark:hover:border-secondary/40 transition-all duration-300"
                         >
                           {tech.icon && <tech.icon className={`w-5 h-5 ${tech.iconColor}`} />}
-                          <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{tech.name}</span>
+                          <span className="text-sm font-semibold text-[#1A111E] dark:text-slate-300">{tech.name}</span>
                         </div>
                       ))}
                     </div>

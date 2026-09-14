@@ -101,7 +101,7 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300 animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-sm transition-opacity duration-300 animate-in fade-in"
       onClick={(e) => {
         if (e.target === e.currentTarget && !isLoading) {
           handleClose();
@@ -111,13 +111,13 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative w-full max-w-md bg-white dark:bg-portfolio-surface border border-slate-200 dark:border-stone-800 rounded-2xl shadow-2xl overflow-hidden p-6 sm:p-8 transition-all">
+      <div className="relative w-full max-w-md bg-white dark:bg-portfolio-surface border border-[#F0DEE3] dark:border-[#2D2034] rounded-2xl shadow-2xl overflow-hidden p-6 sm:p-8 transition-all">
         
         {/* Botón cerrar */}
         <button
           onClick={handleClose}
           disabled={isLoading}
-          className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-stone-800 transition-colors disabled:opacity-50 cursor-pointer"
+          className="absolute top-4 right-4 p-2 rounded-xl text-[#7E6982] hover:text-[#1A111E] dark:hover:text-slate-200 hover:bg-primary/10 dark:hover:bg-portfolio-surface/60 transition-colors disabled:opacity-50 cursor-pointer"
           aria-label="Cerrar modal"
         >
           <FiX className="w-5 h-5" />
@@ -125,13 +125,13 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
 
         {/* Encabezado con Icono */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-portfolio-accent/20 to-portfolio-muted/20 border border-portfolio-accent/30 flex items-center justify-center text-portfolio-accent mb-4 shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary/20 via-rose-500/20 to-secondary/20 border border-primary/30 flex items-center justify-center text-primary mb-4 shadow-inner">
             <FiLock className="w-7 h-7" />
           </div>
-          <h3 id="modal-title" className="text-xl font-bold text-slate-900 dark:text-portfolio-text">
+          <h3 id="modal-title" className="text-xl font-bold text-[#1A111E] dark:text-portfolio-text">
             Acceso Protegido
           </h3>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+          <p className="mt-2 text-sm text-[#6B556E] dark:text-slate-400 leading-relaxed">
             Ingresa la contraseña autorizada para descargar el Currículum Vitae.
           </p>
         </div>
@@ -139,7 +139,7 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
         {/* Formulario */}
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#6B556E] dark:text-slate-400 mb-2">
               Contraseña
             </label>
             <div className="relative">
@@ -153,14 +153,14 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
                 }}
                 disabled={isLoading || isSuccess}
                 placeholder="Ingresa la contraseña..."
-                className="w-full px-4 py-3 pr-12 rounded-xl border border-slate-200 dark:border-stone-700 bg-slate-50 dark:bg-stone-900/60 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-portfolio-accent/50 focus:border-portfolio-accent transition-all text-sm"
+                className="w-full px-4 py-3 pr-12 rounded-xl border border-[#EBD6DC] dark:border-portfolio-surface/80 bg-[#FAF5F6] dark:bg-stone-900/60 text-[#1A111E] dark:text-slate-100 placeholder-[#9C859E] focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all text-sm"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 disabled={isLoading || isSuccess}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-[#7E6982] hover:text-[#1A111E] dark:hover:text-slate-200 rounded-lg transition-colors cursor-pointer"
                 aria-label={showPassword ? 'Ocultar contraseña' : 'Ver contraseña'}
               >
                 {showPassword ? <FiEyeOff className="w-4 h-4" /> : <FiEye className="w-4 h-4" />}
@@ -190,14 +190,14 @@ const CvDownloadModal = ({ isOpen, onClose }) => {
               type="button"
               onClick={handleClose}
               disabled={isLoading}
-              className="w-full sm:w-1/2 px-4 py-3 rounded-xl border border-slate-200 dark:border-stone-700 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-stone-800 transition-colors disabled:opacity-50 cursor-pointer"
+              className="w-full sm:w-1/2 px-4 py-3 rounded-xl border border-[#EAD6DC] dark:border-stone-700 text-[#5A455E] dark:text-slate-300 font-semibold text-sm hover:bg-[#FAF5F6] dark:hover:bg-stone-800 transition-colors disabled:opacity-50 cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={isLoading || !password.trim() || isSuccess}
-              className="w-full sm:w-1/2 px-4 py-3 rounded-xl bg-gradient-to-r from-portfolio-muted to-portfolio-accent hover:from-portfolio-accent hover:to-portfolio-muted text-white font-bold text-sm shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-1/2 px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold text-sm shadow-md shadow-primary/25 hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
             >
               {isLoading ? (
                 <>
