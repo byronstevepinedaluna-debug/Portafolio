@@ -21,19 +21,6 @@ function App() {
     // Mostrar el mensaje
     setShowFunkoMessage(true);
 
-    // Pronunciar 'Hola Mundo' con voz si está disponible
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      try {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance('¡Hola Mundo!');
-        utterance.lang = 'es-ES';
-        utterance.rate = 1.0;
-        window.speechSynthesis.speak(utterance);
-      } catch {
-        // Ignora restricciones del navegador
-      }
-    }
-
     // Ocultar mensaje después de 3.5 segundos
     if (funkoTimerRef.current) {
       clearTimeout(funkoTimerRef.current);
@@ -66,7 +53,7 @@ function App() {
               aria-live="polite"
               className="absolute -top-12 sm:-top-14 right-2 sm:right-4 z-40 bg-white dark:bg-[#181C24] text-[#0F172A] dark:text-white px-4 py-2 rounded-2xl shadow-2xl border-2 border-[#991B1B] font-extrabold text-xs sm:text-sm whitespace-nowrap animate-bounce flex items-center gap-1.5 filter drop-shadow-lg"
             >
-              <span>¡Hola Mundo! 👋</span>
+              <span>Hola Mundo</span>
               {/* Flecha apuntando al Funko */}
               <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white dark:bg-[#181C24] border-b-2 border-r-2 border-[#991B1B] rotate-45"></div>
             </div>
