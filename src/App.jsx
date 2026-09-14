@@ -5,12 +5,25 @@ import About from './pages/About';
 import Timeline from './components/Timeline';
 import Projects from './pages/Projects';
 import SnowTotoroBackground from './components/SnowTotoroBackground';
+import funkoImg from './assets/funko.png';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F4F6F8] dark:bg-portfolio-bg text-[#0F172A] dark:text-portfolio-text transition-colors duration-300 relative selection:bg-[#991B1B]/20 selection:text-[#991B1B]">
-      {/* Fondo animado de partículas del Funko y copos de nieve */}
+      {/* Fondo animado de partículas de Duke y copos de nieve */}
       <SnowTotoroBackground />
+
+      {/* Personaje Funko Pop en la derecha */}
+      <div 
+        aria-hidden="true" 
+        className="fixed bottom-0 right-2 sm:right-6 lg:right-10 pointer-events-none z-20 select-none w-24 sm:w-36 lg:w-44 transition-all duration-500 filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]"
+      >
+        <img 
+          src={funkoImg} 
+          alt="Funko Pop Character" 
+          className="w-full h-auto object-contain"
+        />
+      </div>
 
       {/* Iluminación ambiental sutil y sólida (sin degradados dobles) */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-slate-400/10 dark:bg-slate-800/20 rounded-full blur-3xl pointer-events-none z-0"></div>
