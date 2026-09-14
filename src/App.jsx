@@ -5,25 +5,12 @@ import About from './pages/About';
 import Timeline from './components/Timeline';
 import Projects from './pages/Projects';
 import SnowTotoroBackground from './components/SnowTotoroBackground';
-import dukeImg from './assets/duke.png';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F4F6F8] dark:bg-portfolio-bg text-[#0F172A] dark:text-portfolio-text transition-colors duration-300 relative selection:bg-[#991B1B]/20 selection:text-[#991B1B]">
-      {/* Fondo animado de partículas de Duke y copos de nieve */}
+      {/* Fondo animado de partículas del Funko y copos de nieve */}
       <SnowTotoroBackground />
-
-      {/* Ilustración de fondo de Duke (Mascota Java) con Thumbs Up */}
-      <div 
-        aria-hidden="true" 
-        className="fixed bottom-0 right-2 sm:right-6 lg:right-10 pointer-events-none z-0 select-none opacity-25 dark:opacity-30 max-w-[180px] sm:max-w-[250px] lg:max-w-[310px] transition-opacity duration-500"
-      >
-        <img 
-          src={dukeImg} 
-          alt="Duke background" 
-          className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
-        />
-      </div>
 
       {/* Iluminación ambiental sutil y sólida (sin degradados dobles) */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-slate-400/10 dark:bg-slate-800/20 rounded-full blur-3xl pointer-events-none z-0"></div>

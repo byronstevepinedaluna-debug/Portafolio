@@ -1,15 +1,13 @@
 import { useMemo } from 'react';
-import dukeImg from '../assets/duke.png';
+import funkoImg from '../assets/funko.png';
 
-// Partícula de Duke (Mascota oficial de Java)
-const DukeParticle = ({ size = 30, opacity = 0.6 }) => (
+// Partícula del Funko Pop personalizado
+const FunkoParticle = ({ width = 28, opacity = 0.65 }) => (
   <img
-    src={dukeImg}
-    alt="Duke Particle"
-    width={size}
-    height={size}
+    src={funkoImg}
+    alt="Funko Particle"
+    style={{ width: `${width}px`, height: 'auto', opacity }}
     className="pointer-events-none object-contain drop-shadow-sm select-none"
-    style={{ opacity }}
   />
 );
 
@@ -29,13 +27,13 @@ const SnowflakeParticle = ({ size = 14, color, opacity = 0.5 }) => (
 
 const SnowTotoroBackground = () => {
   const particles = useMemo(() => {
-    // Paleta de nieve y Duke (blanco, gris pizarra, rojo carmesí característico)
+    // Paleta de nieve y estilo elegante (blanco, plateado, pizarra, azul marino)
     const snowColors = [
       '#FFFFFF', // Blanco puro
       '#E2E8F0', // Pizarra muy clara
       '#CBD5E1', // Acero plateado
       '#94A3B8', // Pizarra media
-      '#991B1B', // Carmesí oscuro característico de la nariz de Duke
+      '#1E3A8A', // Azul marino sutil del traje
     ];
 
     const count = 28;
@@ -47,10 +45,10 @@ const SnowTotoroBackground = () => {
       const duration = 12 + ((i * 37) % 14); // 12s a 26s
       const delay = -((i * 43) % 25);
       const sway = -30 + ((i * 59) % 60);
-      const rotation = -20 + ((i * 47) % 40);
+      const rotation = -15 + ((i * 47) % 30);
       const color = snowColors[i % snowColors.length];
-      const size = isSnow ? 14 + ((i * 7) % 8) : 28 + ((i * 11) % 16);
-      const opacity = 0.3 + (((i * 13) % 35) / 100);
+      const size = isSnow ? 14 + ((i * 7) % 8) : 26 + ((i * 11) % 14);
+      const opacity = 0.35 + (((i * 13) % 35) / 100);
 
       items.push({
         id: i,
@@ -75,19 +73,19 @@ const SnowTotoroBackground = () => {
       className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
     >
       <style>{`
-        @keyframes dukeSnowFall {
+        @keyframes funkoSnowFall {
           0% {
-            transform: translateY(-80px) translateX(0) rotate(0deg);
+            transform: translateY(-90px) translateX(0) rotate(0deg);
             opacity: 0;
           }
           10% {
-            opacity: var(--snow-op, 0.5);
+            opacity: var(--snow-op, 0.55);
           }
           85% {
-            opacity: var(--snow-op, 0.5);
+            opacity: var(--snow-op, 0.55);
           }
           100% {
-            transform: translateY(calc(100vh + 90px)) translateX(var(--snow-sway, 25px)) rotate(var(--snow-rot, 20deg));
+            transform: translateY(calc(100vh + 100px)) translateX(var(--snow-sway, 25px)) rotate(var(--snow-rot, 15deg));
             opacity: 0;
           }
         }
@@ -99,7 +97,7 @@ const SnowTotoroBackground = () => {
           className="absolute top-0 will-change-transform"
           style={{
             left: `${p.left}%`,
-            animation: `dukeSnowFall ${p.duration}s linear infinite`,
+            animation: `funkoSnowFall ${p.duration}s linear infinite`,
             animationDelay: `${p.delay}s`,
             '--snow-op': p.opacity,
             '--snow-sway': `${p.sway}px`,
@@ -109,7 +107,7 @@ const SnowTotoroBackground = () => {
           {p.isSnow ? (
             <SnowflakeParticle size={p.size} color={p.color} opacity={p.opacity} />
           ) : (
-            <DukeParticle size={p.size} opacity={p.opacity} />
+            <FunkoParticle width={p.size} opacity={p.opacity} />
           )}
         </div>
       ))}
