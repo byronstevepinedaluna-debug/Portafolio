@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { FiArrowRight as ArrowRight, FiCode as Code, FiDatabase as Database, FiLayout as Layout, FiChevronDown } from 'react-icons/fi';
 import profilePic from '../assets/Perfil.jpeg';
+import CvDownloadModal from '../components/CvDownloadModal';
 
 const Home = () => {
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+
   return (
     <section id="inicio" className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center py-16 md:py-24 overflow-hidden">
       {/* Decorative Orbs */}
@@ -52,13 +56,13 @@ const Home = () => {
 
         {/* Call to Actions */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a
-            href="/cv.pdf"
-            download="ByronPineda_CV.pdf"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-bold rounded-2xl text-white bg-gradient-to-r from-portfolio-muted to-portfolio-accent hover:from-portfolio-accent hover:to-portfolio-muted shadow-lg shadow-portfolio-muted/20 dark:shadow-portfolio-muted/10 hover:scale-105 active:scale-95 transition-all"
+          <button
+            type="button"
+            onClick={() => setIsCvModalOpen(true)}
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-bold rounded-2xl text-white bg-gradient-to-r from-portfolio-muted to-portfolio-accent hover:from-portfolio-accent hover:to-portfolio-muted shadow-lg shadow-portfolio-muted/20 dark:shadow-portfolio-muted/10 hover:scale-105 active:scale-95 transition-all cursor-pointer"
           >
             Descargar CV
-          </a>
+          </button>
           <a
             href="#proyectos"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-slate-200 dark:border-portfolio-surface text-base font-bold rounded-2xl text-slate-700 dark:text-slate-300 bg-white/40 dark:bg-portfolio-surface/40 backdrop-blur-sm hover:bg-slate-50 dark:hover:bg-portfolio-surface hover:scale-105 active:scale-95 transition-all"
@@ -67,6 +71,12 @@ const Home = () => {
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
+
+        {/* Modal de Descarga Protegida */}
+        <CvDownloadModal
+          isOpen={isCvModalOpen}
+          onClose={() => setIsCvModalOpen(false)}
+        />
       </div>
 
       {/* Feature Highlights Section */}
