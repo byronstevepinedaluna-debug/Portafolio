@@ -31,7 +31,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const staticProjects = [
   {
-    title: 'KinalVR - Recorrido Virtual (En Desarrollo)',
+    title: 'KinalVR - Recorrido Virtual',
     description: 'Recorrido interactivo de las instalaciones de Kinal en Realidad Virtual. Arquitectura dividida en cliente y servidor para manejar la lógica y los entornos 3D en la web.',
     technologies: ['JavaScript', 'React', 'Node.js', 'Vite'],
     learnedSkills: 'Integración de entornos 3D en la web con WebXR, manejo de estado complejo en React y desarrollo de un backend que soporta experiencias en tiempo real.',
@@ -80,69 +80,10 @@ const staticProjects = [
 ];
 
 const Projects = () => {
-  const [projectList, setProjectList] = useState(staticProjects);
+  const projectList = staticProjects;
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardWidth, setCardWidth] = useState(600);
   const gap = 24; // gap-6 in pixels
-
-  useEffect(() => {
-    const getRepoNameFromUrl = (url) => {
-      if (!url) return '';
-      const cleanUrl = url.replace(/\/+$/, '');
-      const parts = cleanUrl.split('/');
-      return parts[parts.length - 1].toLowerCase().trim();
-    };
-
-    const fetchGithubRepos = async () => {
-      try {
-        const response = await fetch('https://api.github.com/users/byronstevepinedaluna-debug/repos');
-        if (!response.ok) {
-          throw new Error('Error al obtener los repositorios de GitHub');
-        }
-        const data = await response.json();
-        
-        // Map the fetched repos to match the Project schema
-        const githubProjects = data.map(repo => ({
-          title: repo.name,
-          description: repo.description || 'Repositorio público de GitHub. Sin descripción disponible.',
-          technologies: repo.language ? [repo.language] : ['JavaScript'],
-          learnedSkills: 'Desarrollo del proyecto utilizando tecnologías modernas y control de versiones en GitHub.',
-          images: [], // No static screenshots available
-          githubLink: repo.html_url,
-          liveLink: repo.homepage || ''
-        }));
-
-        // Filter out duplicate repositories from the API response based on repo name
-        const filteredGithubProjects = githubProjects.filter(newProj => {
-          const newRepoName = getRepoNameFromUrl(newProj.githubLink);
-          if (!newRepoName) return true;
-
-          // Exclude profile-specific configuration repo and the portfolio repo itself
-          if (newRepoName === 'byronstevepinedaluna-debug' || newRepoName === 'portafolio') return false;
-
-          const isDuplicate = staticProjects.some(staticProj => {
-            if (Array.isArray(staticProj.githubLink)) {
-              return staticProj.githubLink.some(link => 
-                getRepoNameFromUrl(link.url) === newRepoName
-              );
-            }
-            if (typeof staticProj.githubLink === 'string') {
-              return getRepoNameFromUrl(staticProj.githubLink) === newRepoName;
-            }
-            return false;
-          });
-          return !isDuplicate;
-        });
-
-        // Append the new projects from GitHub API to the existing list
-        setProjectList([...staticProjects, ...filteredGithubProjects]);
-      } catch (error) {
-        console.error('Error fetching github repos:', error);
-      }
-    };
-
-    fetchGithubRepos();
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
