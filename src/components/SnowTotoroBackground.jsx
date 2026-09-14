@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
-import knightImg from '../assets/knight.png';
+import dukeImg from '../assets/duke.png';
 
-// Partícula del Caballero Raging Wolf
-const KnightParticle = ({ size = 28, opacity = 0.55 }) => (
+// Partícula de Duke (Mascota oficial de Java)
+const DukeParticle = ({ size = 30, opacity = 0.6 }) => (
   <img
-    src={knightImg}
-    alt="Knight Particle"
+    src={dukeImg}
+    alt="Duke Particle"
     width={size}
     height={size}
     className="pointer-events-none object-contain drop-shadow-sm select-none"
@@ -29,13 +29,13 @@ const SnowflakeParticle = ({ size = 14, color, opacity = 0.5 }) => (
 
 const SnowTotoroBackground = () => {
   const particles = useMemo(() => {
-    // Paleta sólida del Caballero Raging Wolf (acero plateado, blanco lunar, carmesí medieval)
-    const knightColors = [
-      '#CBD5E1', // Acero plateado claro
-      '#94A3B8', // Pizarra acero
-      '#E2E8F0', // Blanco lunar
-      '#991B1B', // Carmesí oscuro de la armadura
-      '#64748B', // Hierro forjado
+    // Paleta de nieve y Duke (blanco, gris pizarra, rojo carmesí característico)
+    const snowColors = [
+      '#FFFFFF', // Blanco puro
+      '#E2E8F0', // Pizarra muy clara
+      '#CBD5E1', // Acero plateado
+      '#94A3B8', // Pizarra media
+      '#991B1B', // Carmesí oscuro característico de la nariz de Duke
     ];
 
     const count = 28;
@@ -47,10 +47,10 @@ const SnowTotoroBackground = () => {
       const duration = 12 + ((i * 37) % 14); // 12s a 26s
       const delay = -((i * 43) % 25);
       const sway = -30 + ((i * 59) % 60);
-      const rotation = -25 + ((i * 47) % 50);
-      const color = knightColors[i % knightColors.length];
-      const size = isSnow ? 14 + ((i * 7) % 8) : 26 + ((i * 11) % 14);
-      const opacity = 0.25 + (((i * 13) % 35) / 100);
+      const rotation = -20 + ((i * 47) % 40);
+      const color = snowColors[i % snowColors.length];
+      const size = isSnow ? 14 + ((i * 7) % 8) : 28 + ((i * 11) % 16);
+      const opacity = 0.3 + (((i * 13) % 35) / 100);
 
       items.push({
         id: i,
@@ -75,19 +75,19 @@ const SnowTotoroBackground = () => {
       className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
     >
       <style>{`
-        @keyframes knightSnowFall {
+        @keyframes dukeSnowFall {
           0% {
             transform: translateY(-80px) translateX(0) rotate(0deg);
             opacity: 0;
           }
           10% {
-            opacity: var(--snow-op, 0.45);
+            opacity: var(--snow-op, 0.5);
           }
           85% {
-            opacity: var(--snow-op, 0.45);
+            opacity: var(--snow-op, 0.5);
           }
           100% {
-            transform: translateY(calc(100vh + 90px)) translateX(var(--snow-sway, 25px)) rotate(var(--snow-rot, 25deg));
+            transform: translateY(calc(100vh + 90px)) translateX(var(--snow-sway, 25px)) rotate(var(--snow-rot, 20deg));
             opacity: 0;
           }
         }
@@ -99,7 +99,7 @@ const SnowTotoroBackground = () => {
           className="absolute top-0 will-change-transform"
           style={{
             left: `${p.left}%`,
-            animation: `knightSnowFall ${p.duration}s linear infinite`,
+            animation: `dukeSnowFall ${p.duration}s linear infinite`,
             animationDelay: `${p.delay}s`,
             '--snow-op': p.opacity,
             '--snow-sway': `${p.sway}px`,
@@ -109,7 +109,7 @@ const SnowTotoroBackground = () => {
           {p.isSnow ? (
             <SnowflakeParticle size={p.size} color={p.color} opacity={p.opacity} />
           ) : (
-            <KnightParticle size={p.size} opacity={p.opacity} />
+            <DukeParticle size={p.size} opacity={p.opacity} />
           )}
         </div>
       ))}

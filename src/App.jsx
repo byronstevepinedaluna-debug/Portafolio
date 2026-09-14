@@ -5,22 +5,22 @@ import About from './pages/About';
 import Timeline from './components/Timeline';
 import Projects from './pages/Projects';
 import SnowTotoroBackground from './components/SnowTotoroBackground';
-import knightImg from './assets/knight.png';
+import dukeImg from './assets/duke.png';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F4F6F8] dark:bg-portfolio-bg text-[#0F172A] dark:text-portfolio-text transition-colors duration-300 relative selection:bg-[#991B1B]/20 selection:text-[#991B1B]">
-      {/* Fondo animado de partículas del Caballero y copos de nieve */}
+      {/* Fondo animado de partículas de Duke y copos de nieve */}
       <SnowTotoroBackground />
 
-      {/* Ilustración de fondo del Caballero Raging Wolf */}
+      {/* Ilustración de fondo de Duke (Mascota Java) con Thumbs Up */}
       <div 
         aria-hidden="true" 
-        className="fixed bottom-0 right-2 sm:right-6 lg:right-12 pointer-events-none z-0 select-none opacity-20 dark:opacity-25 max-w-[200px] sm:max-w-[280px] lg:max-w-[340px] transition-opacity duration-500"
+        className="fixed bottom-0 right-2 sm:right-6 lg:right-10 pointer-events-none z-0 select-none opacity-25 dark:opacity-30 max-w-[180px] sm:max-w-[250px] lg:max-w-[310px] transition-opacity duration-500"
       >
         <img 
-          src={knightImg} 
-          alt="Knight background" 
+          src={dukeImg} 
+          alt="Duke background" 
           className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
         />
       </div>
