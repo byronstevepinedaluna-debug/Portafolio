@@ -57,15 +57,17 @@ const staticProjects = [
     technologies: ['Node.js', 'Express', 'PostgreSQL', 'JWT'],
     learnedSkills: 'Implementación de seguridad financiera con JWT, transacciones ACID en bases de datos relacionales y diseño de interfaces con enfoque en la confianza del usuario.',
     images: [nexus1, nexus2, nexus3],
-    githubLink: 'https://github.com/byronstevepinedaluna-debug/Nexusbank',
+    githubLink: 'https://github.com/byronstevepinedaluna-debug/Sistema-bancario-NexusBank',
+    liveLink: 'https://sistema-bancario-nexusbank.onrender.com/'
   },
   {
-    title: 'BloLink - Plataforma de Enlaces',
-    description: 'Herramienta moderna que centraliza todos tus enlaces de redes sociales y portafolios en una sola página personalizable y optimizada para dispositivos móviles.',
-    technologies: ['React', 'TailwindCSS', 'Vite'],
-    learnedSkills: 'Optimización extrema de bundle para carga instantánea, diseño Mobile-First y arquitectura de componentes reutilizables.',
+    title: 'BloodLink - Banco de Sangre',
+    description: 'Plataforma digital para la gestión de donantes y banco de sangre, facilitando la evaluación previa de donantes, control de compatibilidad sanguínea y citas de donación.',
+    technologies: ['React', 'TailwindCSS', 'Vite', 'Node.js'],
+    learnedSkills: 'Diseño de interfaces clínicas intuitivas, flujo de evaluación y validación de donantes con generación de códigos y estado de aptitud en tiempo real.',
     images: [blolink1, blolink2, blolink3, blolink4],
-    githubLink: 'https://github.com/byronstevepinedaluna-debug/Blolink',
+    githubLink: 'https://github.com/byronstevepinedaluna-debug/BloodLink',
+    liveLink: 'https://bloodlink-web-pgq0.onrender.com/'
   },
   {
     title: 'Proyecto ExpoKinal',
